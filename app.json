@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "离线2048",
+    "slug": "offline2048",
+    "version": "2.3.0",
+    "orientation": "portrait",
+    "scheme": "offline2048",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FEF3C7"
+    },
+    "ios": {
+      "bundleIdentifier": "com.offline2048.game",
+      "buildNumber": "23"
+    },
+    "android": {
+      "package": "com.offline2048.game",
+      "versionCode": 23
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "production"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5219b4e2-8f55-4138-8da5-a51a46d5aa14"
+      }
+    }
+  }
+}
