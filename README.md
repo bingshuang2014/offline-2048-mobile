@@ -88,11 +88,45 @@ expo-mobile/
 
 ## 构建 APK
 
+### 方式一：本地构建（推荐）
+
+需要本地安装 JDK 17+ 和 Android SDK。
+
+1. **生成原生代码**：
 ```bash
-# 构建调试版
+npx expo prebuild --platform android
+```
+
+2. **在 Windows PowerShell 中构建**：
+```powershell
+cd android
+.\gradlew.bat assembleRelease
+```
+
+3. **APK 输出路径**：
+```
+android/app/build/outputs/apk/release/app-release.apk
+```
+
+4. **重命名 APK**（可选）：
+```powershell
+Rename-Item app-release.apk "离线2048_<版本号>.apk"
+```
+
+> **注意**：构建前需确保 `app.json` 中版本号正确。修改版本后需重新执行 `expo prebuild`。
+
+### 方式二：EAS 云端构建
+
+需要 Expo 账号，构建在云端进行。
+
+```bash
+# 登录 Expo
+npx eas-cli login
+
+# 构建预览版
 build-apk.bat
 
-# 构建发布版
+# 构建生产版
 build-apk-production.bat
 ```
 
