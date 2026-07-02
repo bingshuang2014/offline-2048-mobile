@@ -1,18 +1,19 @@
 @echo off
+chcp 65001 >nul
 echo ========================================
-echo   离线2048 - APK 构建脚本
+echo   Offline 2048 - Build APK (Preview)
 echo ========================================
 echo.
 
 cd /d "%~dp0"
 
-echo [1/3] 检查登录状态...
+echo [1/3] Checking login status...
 npx eas-cli whoami
 if errorlevel 1 (
     echo.
-    echo ❌ 未登录 Expo 账户
+    echo Not logged in to Expo.
     echo.
-    echo 请先运行以下命令登录:
+    echo Please run:
     echo   npx eas-cli login
     echo.
     pause
@@ -20,16 +21,16 @@ if errorlevel 1 (
 )
 
 echo.
-echo ✅ 已登录
+echo Logged in.
 echo.
-echo [2/3] 开始构建 APK (预览版本)...
+echo [2/3] Building APK (preview)...
 echo.
 
 npx eas-cli build --platform android --profile preview
 
 if errorlevel 1 (
     echo.
-    echo ❌ 构建失败
+    echo Build failed.
     echo.
     pause
     exit /b 1
@@ -37,10 +38,9 @@ if errorlevel 1 (
 
 echo.
 echo ========================================
-echo ✅ 构建成功！
+echo Build succeeded!
 echo ========================================
 echo.
-echo APK 文件可以通过以下链接下载:
-echo (请查看上面的构建输出中的下载链接)
+echo Download APK from the link above.
 echo.
 pause

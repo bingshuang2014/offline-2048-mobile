@@ -2,7 +2,7 @@
   "expo": {
     "name": "离线2048",
     "slug": "offline2048",
-    "version": "2.3.0",
+    "version": "2.4.0",
     "orientation": "portrait",
     "scheme": "offline2048",
     "icon": "./assets/icon.png",
@@ -14,11 +14,11 @@
     },
     "ios": {
       "bundleIdentifier": "com.offline2048.game",
-      "buildNumber": "23"
+      "buildNumber": "24"
     },
     "android": {
       "package": "com.offline2048.game",
-      "versionCode": 23
+      "versionCode": 24
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -30,7 +30,8 @@
         {
           "iCloudContainerEnvironment": "production"
         }
-      ]
+      ],
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true
